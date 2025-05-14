@@ -15,8 +15,8 @@
 
   --ff-sans: "Inter", sans-serif;
 
-  --fs-text-preset-100: 1.4rem;
-  --fs-text-preset-200: 2.4rem;
+  --fs-text-preset-100: 2.4rem;
+  --fs-text-preset-200: 1.4rem;
 
   --fw-regular: 400;
   --fw-bold: 600;
@@ -49,9 +49,10 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
+  padding-inline: var(--spacing-300);
 
   color: hsl(var(--clr-white));
-  font-size: var(--fs-text-preset-100);
+  font-size: var(--fs-text-preset-200);
   font-family: var(--ff-sans);
   font-weight: var(--fw-regular);
   background-color: hsl(var(--clr-grey-900));
@@ -91,6 +92,14 @@ a:visited {
   border: 0;
 }
 
+.clr-green {
+  color: hsl(var(--clr-green));
+}
+
+.bg-grey-800 {
+  background-color: hsl(var(--clr-grey-800));
+}
+
 .lh-100 {
   line-height: var(--lh-100);
 }
@@ -99,12 +108,70 @@ a:visited {
   font-size: var(--fs-text-preset-100);
 }
 
-.text-preset-2 {
-  font-size: var(--fs-text-preset-200);
-}
-
 .fw-bold {
   font-weight: var(--fw-bold);
 }
 
 /* === end of utilities */
+
+.social-profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  max-width: 38.4rem;
+  padding: var(--spacing-300);
+  text-align: center;
+
+  border-radius: 1.2rem;
+
+  & .social-profile__picture {
+    margin-inline: auto;
+    width: 8.8rem;
+
+    border-radius: 50%;
+
+    aspect-ratio: 1;
+  }
+
+  & .social-profile__heading {
+    margin-bottom: var(--spacing-50);
+  }
+
+  & .social-profile__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+  }
+
+  & .social-profile__link {
+    display: block;
+    padding: var(--spacing-150);
+    width: 27.9rem;
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+  }
+
+  & .social-profile__link:link,
+  & .social-profile__link:visited {
+    color: hsl(var(--clr-white));
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-100);
+    background-color: hsl(var(--clr-grey-700));
+    border-radius: 0.8rem;
+  }
+
+  & .social-profile__link:hover,
+  & .social-profile__link:focus {
+    color: hsl(var(--clr-grey-700));
+    background-color: hsl(var(--clr-green));
+  }
+}
+
+@media screen and (min-width: 27.1875em) {
+  .social-profile {
+    padding: var(--spacing-500);
+
+    & .social-profile__link {
+      width: 30.4rem;
+    }
+  }
+}
