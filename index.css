@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+  font-display: swap;
+}
+
+:root {
+  --clr-grey-900: 0 0 8;
+  --clr-grey-800: 0 0 12;
+  --clr-grey-700: 0 0 20;
+
+  --clr-green: 75 94 57;
+
+  --clr-white: 0 0 100;
+
+  --ff-sans: "Inter", sans-serif;
+
+  --fs-text-preset-100: 1.4rem;
+  --fs-text-preset-200: 2.4rem;
+
+  --fw-regular: 400;
+  --fw-bold: 600;
+
+  --lh-100: 1.5em;
+
+  --spacing-50: 0.4rem;
+  --spacing-100: 0.8rem;
+  --spacing-150: 1.2rem;
+  --spacing-200: 1.6rem;
+  --spacing-300: 2.4rem;
+  --spacing-500: 4rem;
+}
+
+/* === reset === */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+
+  color: hsl(var(--clr-white));
+  font-size: var(--fs-text-preset-100);
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-regular);
+  background-color: hsl(var(--clr-grey-900));
+
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+/* === end of reset === */
+
+/* === utilities === */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.lh-100 {
+  line-height: var(--lh-100);
+}
+
+.text-preset-1 {
+  font-size: var(--fs-text-preset-100);
+}
+
+.text-preset-2 {
+  font-size: var(--fs-text-preset-200);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+/* === end of utilities */
